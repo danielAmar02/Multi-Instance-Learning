@@ -37,7 +37,7 @@ def Get_train_valid_Path(Train_set, train_percentage):
   
   
   
-  def generate_batch(path):
+def generate_batch(path):
         bags = []
     #for each_path in path:
         for patient_name in df['ID'].unique():
