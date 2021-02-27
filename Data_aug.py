@@ -1,7 +1,9 @@
+import numpy as np
 import random
 import threading
 #from keras.preprocessing.image import ImageDataGenerator
 import scipy.misc as sci
+import cv2
 
 def random_flip_img(img, horizontal_chance=0, vertical_chance=0):
     flip_horizontal = False
