@@ -106,3 +106,37 @@ def train_eval(model, train_set, irun, ifold):
     fig.savefig(save_fig_name)
 
     return model_name
+
+
+
+def model_training(input_dim, dataset, irun, ifold):
+
+    train_bags = dataset['train']
+    test_bags = dataset['test']
+
+    # convert bag to batch
+    train_set = generate_batch(train_bags)
+    test_set = generate_batch(test_bags)
+    print('CELL_NET')
+
+    model = cell_net(input_dim, useMulGpu=False)
+
+    # train model
+    t1 = time.time()
+    num_batch = len(train_set)
+    # for epoch in range(args.max_epoch):
+    print('TRAIN_EVAL')
+    model_name = train_eval(model, train_set, irun, ifold)
+
+    print("load saved model weights")
+    model.load_weights(model_name)
+
+    test_loss, test_acc = test_eval(model, test_set)
+
+    t2 = time.time()
+    #
+
+    print ('run time:', (t2 - t1) / 60.0, 'min')
+    print ('test_acc={:.3f}'.format(test_acc))
+
+    return test_acc
