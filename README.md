@@ -10,7 +10,7 @@ Lymphocytosis is an increase in the number or proportion of lymphocytes in the b
 
 ![alt text](https://github.com/danielAmar02/DL_MI/blob/main/Media/lymph.png)
 
-The goal of this challenge is to provide a MIL framework which will predict with high accuracy if a new patient has Lymphocytosis. It would be very useful for two reasons :
+The goal of this [challenge](https://www.kaggle.com/competitions/3md3070-dlmi/data) is to provide a MIL framework which will predict with high accuracy if a new patient has Lymphocytosis. It would be very useful for two reasons :
 
 • First, it automates the analysis of blood cells of the patients.
 
